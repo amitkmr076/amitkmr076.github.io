@@ -35,8 +35,8 @@ body {
 
 /* Tech GIF beside profile */
 .side-gif {
-    width: 80px; /* Adjust size as needed */
-    margin-left: 10px; /* Space between profile pic and GIF */
+    width: 150px; /* Increased size for the GIF beside profile */
+    margin-left: 20px; /* Increased space */
 }
 
 /* Section Styling */
@@ -110,8 +110,8 @@ footer {
 
 /* Tech GIF at the bottom */
 .bottom-gif {
-    width: 100px; /* Adjust size as needed */
-    animation: play 2s infinite; /* Playful bounce animation */
+    width: 200px; /* Increased size for the bottom GIF */
+    animation: play 2s infinite; /* Bounce animation */
 }
 
 /* Bounce Animation for Bottom GIF */
