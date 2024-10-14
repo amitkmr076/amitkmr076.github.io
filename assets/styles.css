@@ -20,23 +20,26 @@ body {
     padding: 20px;
 }
 
-/* Profile Image */
+/* Profile Image Styling (Shifted to Left) */
+.profile-container {
+    display: flex;
+    justify-content: flex-start; /* Align profile to the left */
+    align-items: center;
+    padding: 20px;
+    background-color: #007bff; /* Same as header */
+}
+
 .profile-image {
     width: 150px;
     border-radius: 50%;
+    margin-right: 20px; /* Space between profile and GIF */
 }
 
-/* Profile container to align profile image and GIF */
-.profile-container {
-    display: flex;
-    align-items: center; /* Center align vertically */
-    justify-content: center; /* Center align horizontally */
-}
-
-/* Tech GIF beside profile */
+/* Tech GIF Styling (Right Side, Larger) */
 .side-gif {
-    width: 200px; /* Increased size for the GIF beside the profile */
-    margin-left: 20px; /* Increased space */
+    width: 400px; /* Make the GIF much larger */
+    height: auto; /* Keep the aspect ratio */
+    margin-left: auto; /* Shift GIF to the right */
 }
 
 /* Section Styling */
@@ -52,6 +55,25 @@ body {
 /* Headings */
 h1, h2 {
     color: #007bff; /* Blue color for headings */
+}
+
+/* Night Mode Button Styling (Stand Out More) */
+.theme-toggle {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffc107; /* Bright yellow for contrast */
+    color: #333; /* Dark text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Button Styling */
@@ -144,24 +166,8 @@ footer.night-mode {
     color: #f0f4f8;
 }
 
-/* Button for Theme Toggle */
-.theme-toggle {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.theme-toggle:hover {
-    background-color: #0056b3;
-}
-
 /* Night Mode Button Styling */
 body.night-mode .theme-toggle {
-    background-color: #f0f4f8;
+    background-color: #ffc107;
     color: #333;
 }
