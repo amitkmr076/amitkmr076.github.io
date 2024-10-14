@@ -7,27 +7,26 @@
     <link rel="stylesheet" href="assets/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="header">
+<body class="night-mode"> <!-- Set night mode as default -->
+    <header class="header night-mode"> <!-- Header starts in night mode -->
         <div class="profile-container">
             <img src="assets/profile.jpg" alt="Amit Kumar" class="profile-image">
+            <!-- Add name and designation next to the profile picture -->
+            <div class="profile-details">
+                <h1>Amit Kumar</h1>
+                <h2>DevOps Engineer, Technical Support, and Project Manager</h2>
+            </div>
             <img src="assets/tech_gif_right.gif" alt="Tech Animation" class="side-gif"> <!-- Tech GIF beside profile pic -->
         </div>
-        <h1>Amit Kumar</h1>
-        <h2>DevOps Engineer & Technical Support Specialist</h2>
-        <p>Welcome to my portfolio! I'm passionate about optimizing workflows and leveraging cloud technologies.</p>
-
-        <!-- Night Mode Toggle Button -->
-        <button id="theme-toggle" class="theme-toggle">Switch to Night Mode</button>
     </header>
 
     <main>
-        <section id="resume" class="section">
+        <section id="resume" class="section night-mode">
             <h2>Resume</h2>
             <p><a href="assets/resume.pdf" class="button">View my resume</a></p>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projects" class="section night-mode">
             <h2>Projects</h2>
             <ul>
                 <li>
@@ -41,13 +40,13 @@
             </ul>
         </section>
 
-        <section id="blog" class="section">
+        <section id="blog" class="section night-mode">
             <h2>Blog</h2>
             <p>Check out my latest thoughts and insights on tech and DevOps:</p>
             <a href="https://amitblog.hashnode.dev" target="_blank" class="button blog-button">Visit My Blog</a>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section night-mode">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:amitkmr076@gmail.com">amitkmr076@gmail.com</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/amit-kumar" target="_blank">Visit my LinkedIn</a></p>
@@ -58,7 +57,7 @@
         <img src="assets/tech_gif_bottom.gif" alt="Tech Animation" class="bottom-gif"> <!-- Tech GIF at the bottom -->
     </div>
 
-    <footer class="animate">
+    <footer class="animate night-mode">
         <p>© 2024 Amit Kumar</p>
     </footer>
 
@@ -69,7 +68,13 @@
         const header = document.querySelector('.header');
         const sections = document.querySelectorAll('.section');
         const footer = document.querySelector('footer');
-    
+
+        // Automatically start in night mode
+        body.classList.add('night-mode');
+        header.classList.add('night-mode');
+        sections.forEach(section => section.classList.add('night-mode'));
+        footer.classList.add('night-mode');
+
         // Event listener for the toggle button
         toggleButton.addEventListener('click', () => {
             // Toggle night-mode class for body, header, sections, and footer
@@ -86,4 +91,5 @@
             }
         });
     </script>
-    
+</body>
+</html>
