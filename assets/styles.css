@@ -4,11 +4,11 @@ body, h1, h2, p {
     padding: 0;
 }
 
-/* Set the overall background color */
+/* Default Light Mode Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f4f8; /* Light greyish background for a softer look */
-    color: #333;
+    background-color: #f0f4f8; /* Light greyish background */
+    color: #333; /* Dark text */
     line-height: 1.6;
 }
 
@@ -119,4 +119,47 @@ footer {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Night Mode Styles */
+body.night-mode {
+    background-color: #1e1e1e; /* Dark background for night mode */
+    color: #f0f4f8; /* Light text for night mode */
+}
+
+.header.night-mode {
+    background-color: #333; /* Dark header for night mode */
+    color: #f0f4f8; /* Light text */
+}
+
+.section.night-mode {
+    background-color: #2e2e2e; /* Dark section background */
+    color: #f0f4f8; /* Light text */
+}
+
+footer.night-mode {
+    background-color: #1e1e1e;
+    color: #f0f4f8;
+}
+
+/* Button for Theme Toggle */
+.theme-toggle {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* Night Mode Button Styling */
+body.night-mode .theme-toggle {
+    background-color: #f0f4f8;
+    color: #333;
 }
