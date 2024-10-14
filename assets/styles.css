@@ -82,9 +82,10 @@ h1, h2 {
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: block; /* Ensure it behaves like a block element */
-    margin: 10px auto; /* Center the button and add margin */
+    margin-left: 50px; /* Shift the button to the right */
 }
 
+/* Night Mode Button Hover Effect */
 .theme-toggle:hover {
     background-color: #e0a800; /* Darker yellow on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
