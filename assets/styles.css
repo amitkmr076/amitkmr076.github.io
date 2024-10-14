@@ -107,11 +107,12 @@ a.button:hover {
 
 /* Blog Button */
 a.blog-button {
-    background-color: #17a2b8; /* Cyan button for Blog */
+    background-color: #28a745; /* Green button for Blog (changed from cyan) */
+    color: white; /* White text */
 }
 
 a.blog-button:hover {
-    background-color: #138496; /* Darker cyan on hover */
+    background-color: #218838; /* Darker green on hover */
 }
 
 /* Link Colors for Night Mode */
