@@ -114,6 +114,15 @@ a.blog-button:hover {
     background-color: #138496; /* Darker cyan on hover */
 }
 
+/* Link Colors for Night Mode */
+a {
+    color: #007bff; /* Blue color for links */
+}
+
+body.night-mode a {
+    color: #ffc107; /* Bright yellow for links in night mode */
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
