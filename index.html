@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src="assets/profile.jpg" alt="Amit Kumar" style="width: 150px; border-radius: 50%;">
+    <header class="header">
+        <img src="assets/profile.jpg" alt="Amit Kumar" class="profile-image">
         <h1>Amit Kumar</h1>
         <h2>DevOps Engineer & Technical Support Specialist</h2>
         <p>Welcome to my portfolio! I'm passionate about optimizing workflows and leveraging cloud technologies.</p>
@@ -18,38 +18,37 @@
     <main>
         <section id="resume" class="section">
             <h2>Resume</h2>
-            <p><a href="assets/resume.pdf" class="button" target="_blank">View my resume</a></p>
-        </section>        
+            <p><a href="assets/resume.pdf" class="button">View my resume</a></p>
+        </section>
 
-        <section id="projects">
+        <section id="projects" class="section">
             <h2>Projects</h2>
             <ul>
                 <li>
-                    <strong>Building a Serverless Task Master App with AWS and GitHub Integration</strong> - This project focused on implementing a serverless architecture using AWS services and integrating with GitHub for a CI/CD pipeline.
+                    <strong>Building a Serverless Task Master App with AWS and GitHub Integration</strong>
                     <p>Read more about this project in my blog: <a href="https://amitblog.hashnode.dev/building-a-serverless-task-master-app-with-aws-and-github-integration-a-guide-to-cicd-implementation" target="_blank">Hashnode Blog</a>.</p>
                 </li>
                 <li>
-                    <strong>Infrastructure Deployment with Terraform</strong> - This project highlights how to use Terraform to create VPCs, subnets, security groups, S3 buckets, and EC2 instances in a single project.
+                    <strong>Infrastructure Deployment with Terraform</strong>
                     <p>Read more about this project in my blog: <a href="https://amitblog.hashnode.dev/infrastructure-deployment-with-terraform-creating-vpc-subnet-internet-gateway-security-group-s3-bucket-and-ec2-instances-in-a-single-project" target="_blank">Hashnode Blog</a>.</p>
                 </li>
             </ul>
         </section>
-        
 
-        <section id="blog">
+        <section id="blog" class="section">
             <h2>Blog</h2>
             <p>Check out my latest thoughts and insights on tech and DevOps:</p>
-            <a href="https://amitblog.hashnode.dev/" target="_blank" class="button">Visit My Blog</a>
+            <a href="https://amitblog.hashnode.dev" target="_blank" class="button blog-button">Visit My Blog</a>
         </section>
 
         <section id="contact" class="section">
             <h2>Contact Me</h2>
             <p>Email: <a href="mailto:amitkmr076@gmail.com">amitkmr076@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/amit-kumar-3576191b4/" target="_blank">Visit my LinkedIn</a></p>
-        </section>        
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/amit-kumar" target="_blank">Visit my LinkedIn</a></p>
+        </section>
     </main>
 
-    <footer>
+    <footer class="animate">
         <p>© 2024 Amit Kumar</p>
     </footer>
 </body>
