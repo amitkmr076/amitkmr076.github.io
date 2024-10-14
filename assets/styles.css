@@ -81,6 +81,8 @@ h1, h2 {
     transition: background-color 0.3s, transform 0.2s;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensure it behaves like a block element */
+    margin: 10px auto; /* Center the button and add margin */
 }
 
 .theme-toggle:hover {
@@ -107,7 +109,7 @@ a.button:hover {
 
 /* Blog Button */
 a.blog-button {
-    background-color: #28a745; /* Green button for Blog (changed from cyan) */
+    background-color: #28a745; /* Green button for Blog */
     color: white; /* White text */
 }
 
