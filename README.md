@@ -1,82 +1,70 @@
-# Amit Kumar  
-**DevOps Engineer & Technical Support Specialist**  
-
-**Email:** amitkmr076@gmail.com  
-**Phone:** +91-7042884438  
-**Location:** New Delhi, India  
-[LinkedIn](https://www.linkedin.com/in/amit-kumar-3576191b4)
+# 💼 Amit Kumar  
+**DevOps Engineer | Data & Business Analyst | Technical Support Specialist**  
+📧 amitkmr076@gmail.com | 📞 +91-7042884438  
+[🔗 LinkedIn](https://www.linkedin.com/in/amit-kumar-3576191b4)
 
 ---
 
-## Professional Summary  
-A versatile and resourceful professional with a solid foundation in commerce, technology, and project management. Skilled in optimizing processes, enhancing operational efficiency, and delivering exceptional technical support. Adept at leveraging analytical skills and creative solutions across diverse sectors, including DevOps, management, and fintech. Always eager to learn and grow, contributing effectively to fast-paced and forward-thinking organizations.
+## 👋 About Me  
+
+I am a highly motivated and versatile professional with a strong foundation in **commerce** and hands-on experience in **DevOps**, **data/business analytics**, and **technical support**. Passionate about leveraging technology to automate workflows, streamline operations, and generate actionable insights from data.
+
+I aim to contribute to innovative teams by applying a blend of analytical thinking, technical know-how, and a user-focused approach to build scalable, efficient, and impactful solutions.
 
 ---
 
-## Key Skills  
-
-### Technical Skills  
-- **DevOps**: CI/CD, Docker, Kubernetes, Jenkins, Terraform, Ansible  
-- **Cloud Computing**: AWS (CodeCommit, CodeBuild, CodeDeploy, CodePipeline)  
-- **Scripting & Automation**: Python, Shell scripting  
-- **Version Control**: GitHub, GitLab, GitHub Actions, JIRA  
-- **Monitoring & Logging**: Grafana, Prometheus  
-- **Serverless Architecture**: CircleCI, Infrastructure as Code (IaC)  
-- **Operating Systems**: Linux (Ubuntu)
-
-### Business & Management Skills  
-- Project Management  
-- Resource Optimization  
-- Cost Management  
-- Technical Support & Troubleshooting  
-- Customer Relationship Management  
-- Financial Analysis & Reporting
+## 🎓 Education  
+- **M.Com in Commerce** | 2016 – 2018
 
 ---
 
-## Professional Experience  
+## 🛠️ Key Skills  
 
-### Junior DevOps Engineer  
-**Company Name | New Delhi, India | Year – Present**  
-- Streamlined workflows with AWS tools, achieving **30%** time savings.  
-- Reduced deployment errors by **60%** and downtime by **40%** through automation.  
-- Improved team efficiency by **35%** through CI/CD pipeline automation.  
-- Managed infrastructure using Terraform, achieving **50%** cost savings and **30%** reduction in management time.
-
-### Administrative Support Intern  
-**Company Name | New Delhi, India | Year – Year**  
-- Provided administrative and customer support services, improving office operations and service quality.  
-- Managed client interactions, data entry, and document preparation.
+- **DevOps & Cloud**: CI/CD, Docker, Kubernetes, Jenkins, Terraform, Ansible, AWS, CircleCI, GitHub/GitLab, IaC, Linux (Ubuntu)  
+- **Monitoring & Automation**: Grafana, Prometheus, Shell Scripting, Python, Serverless Architecture  
+- **Analytics & BI Tools**: SQL, Power BI, Tableau, MS Excel, Financial Reporting, Business Intelligence  
+- **Support & Project Management**: Project Planning, Technical Support, CRM, Jira, Documentation, Customer Service  
+- **Soft Skills**: Problem Solving, Communication, Team Collaboration, Adaptability, Attention to Detail
 
 ---
 
-## Projects  
+## 💼 Experience  
 
-### Streamlined Workflows with AWS Tools  
-- Implemented AWS services (CodeCommit, CodeBuild, CodeDeploy, and CodePipeline) to streamline DevOps workflows, resulting in **30%** time savings.  
-- Reduced deployment errors and downtime by **60%**.
-
-### Serverless Task Master Application  
-- Developed a serverless Task Master app integrating AWS and GitHub, reducing development cycle time by **30%** and cutting deployment costs by **25%**.
-
-### End-to-End CI/CD Implementation  
-- Utilized Kubernetes, Docker, and Django to improve application efficiency by **40%**, reducing deployment time by **30%** and enhancing scalability.
-
-### Automating Infrastructure with Terraform  
-- Constructed scalable infrastructure using Terraform modules, achieving **50%** cost savings and reducing downtime by **40%**.
+**Administrative / Technical Support Intern**  
+*New Delhi*  
+- Delivered administrative and technical support to ensure smooth operations.  
+- Monitored server status, updated systems, handled client communications, and streamlined documentation tasks.
 
 ---
 
-## Education  
-- **M.Com in Commerce** | University Name | 2016 – 2019  
-- **B.Com in Management** | University Name | 2013 – 2016  
-- **Post-Graduate Diploma in Intellectual Property Rights** | University Name | 2019 – 2021  
+## 🚀 Projects  
+
+### ✅ Streamlined DevOps with AWS  
+- Achieved **30%** time savings by implementing AWS DevOps tools.  
+- Reduced deployment errors by **60%**, improved efficiency by **35%**.
+
+### ✅ Serverless Task Master App  
+- Integrated AWS and GitHub in a serverless app.  
+- Cut development time by **30%**, and deployment cost by **25%**.
+
+### ✅ End-to-End CI/CD Implementation  
+- Used Docker, Kubernetes, and Django for efficient deployment.  
+- Boosted application efficiency by **40%**, cut deployment time by **30%**.
+
+### ✅ Infrastructure Automation with Terraform  
+- Built scalable infrastructure using Terraform modules.  
+- Achieved **50%** cost savings, reduced downtime by **40%**.
 
 ---
 
-## Certifications  
-- Python for DevOps  
+## 📜 Certifications  
+- Deloitte Data Analytics Virtual Experience Program  
 - Advanced DevOps Course  
-- Computer Networking  
+- Python for DevOps  
+- Computer Networking
 
+---
 
+## 📬 Get in Touch  
+I'm open to opportunities and collaborations. Let's connect!  
+📧 amitkmr076@gmail.com | [LinkedIn](https://www.linkedin.com/in/amit-kumar-3576191b4)
