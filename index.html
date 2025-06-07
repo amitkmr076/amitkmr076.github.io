@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Font - Inter for a clean, professional look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js CDN for 3D/2D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         /* Custom CSS for finer control and unique touches */
         body {
@@ -15,6 +17,7 @@
             background-color: #333333; /* Charcoal grey background */
             color: #e0e0e0; /* Lighter text for contrast */
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll due to potential animation overflow */
         }
 
         .container {
@@ -24,14 +27,31 @@
         /* Enhanced header with image and new technical gradient overlay */
         .header-section {
             background-image:
-                linear-gradient(to right, rgba(0, 0, 50, 0.9), rgba(75, 0, 130, 0.8), rgba(0, 255, 255, 0.5)), /* Deep space blue to vibrant electric purple to glowing cyan/teal */
-                url('https://placehold.co/1920x400/2a2a2a/ffffff/blend'); /* Placeholder tech background image (no text) */
+                linear-gradient(to right, rgba(0, 0, 50, 0.9), rgba(75, 0, 130, 0.8), rgba(0, 255, 255, 0.5)); /* Deep space blue to vibrant electric purple to glowing cyan/teal */
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay; /* Blends the image with the gradient */
             color: white; /* Ensure text remains white */
             padding: 5rem 1rem; /* Adjust padding for visual balance */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* Hide overflowing particles */
+            z-index: 1; /* Ensure header content is above canvas */
+        }
+
+        /* Canvas for the background animation - now fixed and full viewport */
+        #bg-animation-canvas {
+            position: fixed; /* Fixed position to cover the whole viewport */
+            top: 0;
+            left: 0;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            z-index: -1; /* Place behind all content */
+        }
+
+        .header-content {
+            position: relative; /* Ensure header text content is on top of canvas */
+            z-index: 1;
+            text-align: center;
         }
 
         .card {
@@ -187,15 +207,26 @@
                 gap: 0.75rem; /* Add some space between stacked buttons */
             }
         }
+
+        /* Styles for the profile picture specifically */
+        .profile-pic {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+
+        .profile-pic:hover {
+            transform: translateY(-5px) scale(1.03); /* Lifts and slightly scales the image on hover */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+        }
     </style>
 </head>
 <body class="antialiased">
     <!-- Header/Hero Section -->
     <header class="header-section text-white py-20 px-4">
-        <div class="container mx-auto text-center">
+        <canvas id="bg-animation-canvas"></canvas> <!-- Canvas for background animation -->
+        <div class="header-content container mx-auto text-center">
             <!-- Profile picture - now square, without white border, and larger -->
             <img src="./assets/profile_pic.png" alt="Profile Picture"
-                 class="w-64 h-64 object-cover mx-auto mb-6 border-4 border-transparent shadow-md rounded-lg"
+                 class="w-64 h-64 object-cover mx-auto mb-6 shadow-md rounded-lg profile-pic"
                  onerror="this.onerror=null;this.src='https://placehold.co/256x256/cccccc/333333?text=AK';">
             <!-- Main text content -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">AMIT KUMAR</h1>
@@ -392,5 +423,116 @@
             <p class="mt-2 text-sm">Designed with <span class="text-red-500">&#10084;</span> and code.</p>
         </div>
     </footer>
+
+    <script>
+        // Three.js background animation for the entire page
+        window.onload = function () {
+            const canvas = document.getElementById('bg-animation-canvas');
+            let scene, camera, renderer, particles, mouseX = 0, mouseY = 0;
+            let windowHalfX = window.innerWidth / 2;
+            let windowHalfY = window.innerHeight / 2;
+
+            function init() {
+                // Scene
+                scene = new THREE.Scene();
+
+                // Camera
+                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+                camera.position.z = 1000;
+                scene.add(camera);
+
+                // Renderer
+                renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+                renderer.setSize(window.innerWidth, window.innerHeight); // Set to full window size
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setClearAlpha(0); // Make the background transparent
+
+                // Particles
+                const particleCount = 2000; // Increased particle count for more density
+                const geometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3);
+                const colors = new Float32Array(particleCount * 3);
+                const color = new THREE.Color();
+
+                for (let i = 0; i < particleCount; i++) {
+                    // Position particles randomly in a larger cube
+                    positions[i * 3] = (Math.random() * 2 - 1) * 2000; // x
+                    positions[i * 3 + 1] = (Math.random() * 2 - 1) * 2000; // y
+                    positions[i * 3 + 2] = (Math.random() * 2 - 1) * 2000; // z
+
+                    // Assign a wider range of vibrant colors
+                    // Hue: Full spectrum (0 to 1), Saturation: High (0.8-1.0), Lightness: Medium-High (0.6-0.8)
+                    color.setHSL(Math.random(), 0.8 + Math.random() * 0.2, 0.6 + Math.random() * 0.2);
+                    colors[i * 3] = color.r;
+                    colors[i * 3 + 1] = color.g;
+                    colors[i * 3 + 2] = color.b;
+                }
+
+                geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+                const material = new THREE.PointsMaterial({
+                    size: 7, // Increased particle size
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.8, // Slightly increased opacity
+                    blending: THREE.AdditiveBlending // For a glowing effect
+                });
+
+                particles = new THREE.Points(geometry, material);
+                scene.add(particles);
+
+                // Event Listeners for mouse interaction and resize
+                document.addEventListener('mousemove', onDocumentMouseMove, false);
+                document.addEventListener('touchmove', onDocumentTouchMove, false);
+                window.addEventListener('resize', onWindowResize, false);
+
+                animate();
+            }
+
+            function onDocumentMouseMove(event) {
+                mouseX = (event.clientX - windowHalfX) * 0.5;
+                mouseY = (event.clientY - windowHalfY) * 0.5;
+            }
+
+            function onDocumentTouchMove(event) {
+                if (event.touches.length === 1) {
+                    event.preventDefault(); // Prevent scrolling
+                    mouseX = (event.touches[0].clientX - windowHalfX) * 0.5;
+                    mouseY = (event.touches[0].clientY - windowHalfY) * 0.5;
+                }
+            }
+
+            function onWindowResize() {
+                // Update dimensions for the full window
+                const newWidth = window.innerWidth;
+                const newHeight = window.innerHeight;
+
+                windowHalfX = newWidth / 2;
+                windowHalfY = newHeight / 2;
+
+                camera.aspect = newWidth / newHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(newWidth, newHeight);
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Rotate particles slowly
+                particles.rotation.x += 0.0005;
+                particles.rotation.y += 0.0007;
+
+                // Make camera slightly follow mouse
+                camera.position.x += (mouseX - camera.position.x) * 0.005;
+                camera.position.y += (-mouseY - camera.position.y) * 0.005;
+                camera.lookAt(scene.position); // Always look at the center of the scene
+
+                renderer.render(scene, camera);
+            }
+
+            init();
+        };
+    </script>
 </body>
 </html>
